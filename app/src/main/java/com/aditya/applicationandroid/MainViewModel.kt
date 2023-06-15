@@ -19,6 +19,7 @@ class MainViewModel : ViewModel() {
         getPosts()
     }
 
+    //fungsi login
     private fun getPosts() {
         _isLoading.value = true
         val client = ApiConfig.getApiService().getPosts()

@@ -12,19 +12,18 @@ import com.bumptech.glide.Glide
 class InfoAdapter : ListAdapter<Posts, InfoAdapter.ViewHolder>(DIF_CALLBACK) {
 
 
-    inner class ViewHolder (
+    inner class ViewHolder(
         private val binding: ListInfoBinding
-            ): RecyclerView.ViewHolder(binding.root){
-                fun bind(data:Posts){
-                    binding.tvTitle.text = data.id.toString()
-                    binding.tvBody.text = data.title
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: Posts) {
+            binding.tvTitle.text = data.id.toString()
+            binding.tvBody.text = data.title
 
-
-                }
-            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ListInfoBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+        val binding = ListInfoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
